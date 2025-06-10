@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="./scripts/imagerender.js" defer></script>
+    <script src="./scripts/imagenavigation.js" defer></script>
+    <script src="./scripts/mobilemenu.js" defer></script>
+    <script src="./scripts/imagespotlight.js" defer></script>
+    <script src="./scripts/addtocart.js" defer></script>
+
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <header id="header">
+      <img id="mobile-menu" src="./images/icon-menu.svg" />
+      <img id="header__logo" src="./images/logo.svg" alt="Sneakers Logo" />
+      <div id="nav-container">
+        <nav id="header__nav-bar">
+          <img
+            src="./images/icon-close.svg"
+            alt="Close menu"
+            class="menu-close-btn"
+          />
+          <a href="#">Collections</a>
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div id="cart-user-container">
+          <div id="header__cart">
+            <button popovertarget="cart-popover" aria-label="Cart">
+              <img src="./images/icon-cart.svg" alt="Cart" />
+            </button>
+
+            <div id="cart-popover" popover="auto" anchor="header__cart">
+              <div class="cart-header">Cart</div>
+              <div id="cart-contents">
+                <p class="empty-cart">Your cart is empty</p>
+                <button class="checkout">Checkout</button>
+              </div>
+            </div>
+            <span class="cart-count">0</span>
+          </div>
+          <div id="header__user">
+            <img src="./images/image-avatar.png" alt="Avatar" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="product">
+      <div id="image-slides-container">
+        <div class="image-slides">
+          <img
+            class="sample-img"
+            src="./images/image-product-1.jpg"
+            alt="Product Image 1"
+          />
+          <img
+            class="sample-img"
+            src="./images/image-product-2.jpg"
+            alt="Product Image 2"
+          />
+          <img
+            class="sample-img"
+            src="./images/image-product-3.jpg"
+            alt="Product Image 3"
+          />
+          <img
+            class="sample-img"
+            src="./images/image-product-4.jpg"
+            alt="Product Image 4"
+          />
+        </div>
+        <div class="navigation">
+          <button class="nav-btn prev">
+            <img src="./images/icon-previous.svg" />
+          </button>
+          <button class="nav-btn next">
+            <img src="./images/icon-next.svg" />
+          </button>
+        </div>
+      </div>
+      <div id="images">
+        <img
+          id="display-img"
+          src="./images/image-product-1.jpg"
+          alt="Product Image 1"
+        />
+        <div id="thumbnails">
+          <img
+            class="selected-img"
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="Product Image 1 Thumbnail"
+          />
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="Product Image 2 Thumbnail"
+          />
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="Product Image 3 Thumbnail"
+          />
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="Product Image 4 Thumbnail"
+          />
+        </div>
+      </div>
+      <div id="spotlight-modal">
+        <img
+          src="./images/icon-close.svg"
+          alt="close spotlight"
+          class="spotlight-close"
+        />
+        <div id="spotlight-slider"></div>
+
+        <div id="spotlight-thumbnails"></div>
+      </div>
+
+      <div id="product-details">
+        <h5>SNEAKER COMPANY</h5>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>
+          These low profile sneakers are your perfect casual wear companion.
+          Featuring a durable outer rubber sole, they'll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price-details">
+          <div class="product-price">
+            <h2>$125.00</h2>
+            <span class="discount">50%</span>
+          </div>
+          <p class="old-price">$250.00</p>
+        </div>
+        <div id="order-product">
+          <div class="product-qty">
+            <span class="qty-decrease"
+              ><img src="./images/icon-minus.svg" alt="Decrease Quantity"
+            /></span>
+            <span id="qty-value">0</span>
+            <span class="qty-increase"
+              ><img src="./images/icon-plus.svg" alt="Increase Quantity"
+            /></span>
+          </div>
+          <button class="place-order">
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill="#000"
+                fill-rule="nonzero"
+              /></svg
+            >Add to cart
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <div class="menu-overlay"></div>
+  </body>
+</html>
